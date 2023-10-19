@@ -5,6 +5,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HomeController {
@@ -15,15 +16,11 @@ public class HomeController {
     }
 
     @RequestMapping("add")
-    public String add(HttpServletRequest req){  // HttpsServletRequest object is available in Tomcat
+    public String add(@RequestParam("num1") int i, @RequestParam("num2") int j,HttpSession session){  // Here we are getting param values from the url
 
-       int i= Integer.parseInt(req.getParameter("num1"));
-       int j= Integer.parseInt(req.getParameter("num2"));
-
+// We reduced the no of lines with the requestparam
         int num3= i+j;
 //        we need to send the num3 to the result.jsp
-
-        HttpSession session = req.getSession();
         session.setAttribute("num3",num3);  // whatever the name we give here we have to use the same name in result.jsp
         return "result.jsp";
     }
