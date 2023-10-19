@@ -11,11 +11,11 @@
     <title>Title</title>
 </head>
 <body>
-        Welcome to Spring MVC.
+        Welcome to Spring MVC practice.
 
-    <form action="add">
-       Enter first number:  <input type="text" name="num1"><br>
-        Enter second number:  <input type="text" name="num2"><br>
+    <form action="addAlien">
+       Enter your id:  <input type="text" name="aid"><br>
+        Enter your name:  <input type="text" name="aname"><br>
         <input type="submit">
     </form>
 </body>
